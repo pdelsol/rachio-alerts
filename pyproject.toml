@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "rachio-alerts"
+version = "0.1.0"
+description = ""
+authors = ["Patricio del Sol <pdelsol@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rachiopy = "^1.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
