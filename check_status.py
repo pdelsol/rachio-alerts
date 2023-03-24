@@ -21,3 +21,7 @@ for zone in zones:
 
 if max_days_ago.days > 0:
 	print(f"ALERT: {max_days_ago.days} DAYS WITH NO WATER")
+
+if max_days_ago.days > 0 or device["status"] == "OFFLINE":
+	exit 1
+exit 0
