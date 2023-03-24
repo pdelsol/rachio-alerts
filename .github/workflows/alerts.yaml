@@ -1,0 +1,28 @@
+name: Alerts
+
+on:
+  schedule:
+    - cron: "0 11,22 * * *"
+
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update -qq -y
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry config virtualenvs.create false
+        poetry install
+    - name: Check Status
+      run: |
+        python check_status.py
