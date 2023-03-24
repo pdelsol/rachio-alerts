@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Patricio del Sol <pdelsol@gmail.com>"]
 readme = "README.md"
-packages = [{include = "rachio_alerts"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
